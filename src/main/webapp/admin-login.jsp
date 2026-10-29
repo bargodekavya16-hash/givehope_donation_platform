@@ -1,0 +1,7 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin login | GiveHope</title>
+<style>body{margin:0;background:#f5f7fb;font-family:Arial,sans-serif;color:#172033;min-height:100vh;display:grid;place-items:center}.card{background:white;padding:30px;border-radius:16px;max-width:420px;width:calc(100% - 32px);box-shadow:0 12px 36px #15234412}label{font-weight:bold}input{display:block;width:100%;box-sizing:border-box;margin:8px 0 16px;padding:12px;border:1px solid #d6dce7;border-radius:8px;font:inherit}.btn{width:100%;border:0;border-radius:9px;background:#14213d;color:white;padding:13px;font-weight:bold;cursor:pointer}a{color:#16845b}.error{color:#b42318}</style></head>
+<body><main class="card"><h1>GiveHope Admin</h1><p>Sign in to review recorded demo donations.</p>
+<% if ("1".equals(request.getParameter("error"))) { %><p class="error">Incorrect password. Please try again.</p><% } %>
+<form action="<%= request.getContextPath() %>/admin/login" method="post"><label for="password">Admin password</label><input id="password" type="password" name="password" required autocomplete="current-password"><button class="btn" type="submit">Sign in</button></form>
+<p><small>Local demo default: <code>admin123</code>. Change it before sharing the app.</small></p><a href="<%= request.getContextPath() %>/">← Back to homepage</a></main></body></html>
